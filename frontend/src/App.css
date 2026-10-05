@@ -1,0 +1,634 @@
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(99, 102, 241, 0.13), transparent 28%),
+    radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.10), transparent 28%),
+    #09090f;
+
+  color: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  height: 72px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(9, 9, 15, 0.82);
+
+  backdrop-filter: blur(20px);
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-logo {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+
+  font-size: 19px;
+
+  box-shadow:
+    0 0 25px rgba(124, 58, 237, 0.3);
+}
+
+.brand h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #71717a;
+
+  font-size: 10px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.online-pill {
+  padding: 7px 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  color: #a1a1aa;
+
+  font-size: 11px;
+
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.online-dot {
+  display: inline-block;
+
+  width: 7px;
+  height: 7px;
+
+  margin-right: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 9px rgba(34, 197, 94, 0.8);
+}
+
+.new-chat-btn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 11px;
+
+  padding: 9px 13px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #e4e4e7;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.new-chat-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   CHAT AREA
+========================= */
+
+.chat-area {
+  flex: 1;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 30px 22px 165px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 66vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+}
+
+.hero-glow {
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: rgba(124, 58, 237, 0.10);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+.hero-icon {
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(135deg, #8b5cf6, #4f46e5);
+
+  font-size: 31px;
+
+  box-shadow:
+    0 0 45px rgba(124, 58, 237, 0.28);
+}
+
+.mini-label {
+  margin: 0 0 13px;
+
+  font-size: 12px;
+
+  color: #a78bfa;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 7vw, 65px);
+
+  line-height: 1;
+
+  letter-spacing: -2.5px;
+}
+
+.hero h1 span {
+  color: #a78bfa;
+}
+
+.hero-subtitle {
+  margin-top: 17px;
+
+  color: #71717a;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   QUICK PROMPTS
+========================= */
+
+.prompt-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(190px, 1fr));
+
+  gap: 11px;
+
+  margin-top: 32px;
+
+  width: min(560px, 100%);
+}
+
+.prompt-grid button {
+  min-height: 55px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  text-align: left;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  color: #d4d4d8;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.prompt-grid button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(139, 92, 246, 0.08);
+
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.prompt-grid button span {
+  font-size: 18px;
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.messages {
+  display: flex;
+  flex-direction: column;
+
+  gap: 27px;
+}
+
+.message {
+  display: flex;
+
+  gap: 13px;
+
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.user-avatar {
+  background: #18181b;
+
+  border: 1px solid #27272a;
+}
+
+.ai-avatar {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.18);
+}
+
+.message-body {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.message-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 6px;
+}
+
+.message-name {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #a1a1aa;
+}
+
+.ai-tag {
+  padding: 2px 6px;
+
+  border-radius: 6px;
+
+  background: rgba(139, 92, 246, 0.1);
+
+  color: #a78bfa;
+
+  font-size: 9px;
+}
+
+.message-text {
+  white-space: pre-wrap;
+
+  color: #d4d4d8;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.user-message .message-text {
+  color: #f4f4f5;
+}
+
+
+/* =========================
+   THINKING
+========================= */
+
+.thinking {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding-top: 7px;
+}
+
+.thinking span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #8b5cf6;
+
+  animation: pulse 1.3s infinite;
+}
+
+.thinking span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.thinking span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+
+}
+
+
+/* =========================
+   COMPOSER
+========================= */
+
+.composer-section {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 16px 20px 13px;
+
+  background:
+    linear-gradient(
+      to top,
+      #09090f 55%,
+      rgba(9, 9, 15, 0.92) 78%,
+      transparent
+    );
+
+  backdrop-filter: blur(12px);
+
+  z-index: 9;
+}
+
+.composer {
+  width: min(850px, 100%);
+
+  min-height: 58px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 9px;
+
+  padding: 9px 9px 9px 17px;
+
+  background: rgba(24, 24, 27, 0.9);
+
+  border: 1px solid #27272a;
+
+  border-radius: 17px;
+
+  transition: 0.2s;
+}
+
+.composer:focus-within {
+  border-color: rgba(139, 92, 246, 0.55);
+
+  box-shadow:
+    0 0 0 4px rgba(124, 58, 237, 0.06);
+}
+
+.composer textarea {
+  flex: 1;
+
+  resize: none;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #fafafa;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  max-height: 140px;
+
+  padding: 8px 0;
+}
+
+.composer textarea::placeholder {
+  color: #52525b;
+}
+
+.send-btn {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #f4f4f5;
+
+  color: #18181b;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: white;
+
+  box-shadow:
+    0 7px 20px rgba(255, 255, 255, 0.12);
+}
+
+.send-btn:disabled {
+  opacity: 0.25;
+
+  cursor: not-allowed;
+}
+
+.composer-bottom {
+  width: min(850px, 100%);
+
+  margin: 7px auto 0;
+
+  padding: 0 4px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #52525b;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .online-pill {
+    display: none;
+  }
+
+  .new-chat-btn {
+    padding: 8px 10px;
+  }
+
+  .chat-area {
+    padding: 25px 15px 150px;
+  }
+
+  .hero {
+    min-height: 63vh;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+
+    letter-spacing: -1.7px;
+  }
+
+  .prompt-grid {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .message-text {
+    font-size: 13px;
+  }
+
+  .composer-section {
+    padding: 11px 12px 10px;
+  }
+
+  .composer-bottom {
+    font-size: 8px;
+  }
+}
